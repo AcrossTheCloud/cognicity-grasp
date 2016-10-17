@@ -87,7 +87,7 @@ bot.parse('@nopemartians', 'Please send me a report', 'en', function(err, result
 	console.log('Bot> @nopemartians '+result);
 });
 
-bot.received(function(err, username, message){
+bot.received('en',function(err, username, message){
 	console.log('Bot> '+message);
 });
 

@@ -102,12 +102,15 @@ Bot.prototype = {
         }
       },
 
-      // received report
-      received: function(callback){
+      /** Function for receiving report
+       * @param {string} language Text string containing ISO 639-1 two letter language code e.g. 'en'
+       * @param {function} callback Callback function for Bot response
+       */
+      received: function(language, callback){
         var self = this;
 
         self.report_card.watchCards(self.config.network.name, function(err, report){
-          callback(err, report.username, report.username+'- '+self.dialogue['en'].received);
+          callback(err, report.username, report.username+'- '+self.dialogue[language].received);
         });
       }
 
